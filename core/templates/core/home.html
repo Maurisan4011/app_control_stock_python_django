@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="principal">
+    <h1 class="cover-heading">App de Control de stock </h1>
+    <p class="lead">Esta app te permite crear un nuevo producto, con los campos Nombre, Precio, Stock y Sección.</p>
+
+    <p class="lead">Con la posibilidad de administrar, modificar, agregar y eliminar existentes.</p>
+    <p class="lead">Para acceder a las funciones solo tienes que registrarte</p>
+
+    <a href="{% url 'registro_usuario'%}" class="btn btn-lg btn-secondary" style="background-color:rgb(3, 3, 3);color:white">Registrate</a>
+
+</div>
+<br>
+<!--------------agregar el contenido que quiero ver en base------------->
+
+{% endblock %}

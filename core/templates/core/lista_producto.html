@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+
+{%  load static %}
+
+{% block content %}
+
+{% block javascript %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="{% static 'core/js/confirmacion.js' %}"></script>
+{% endblock %}
+
+<h2 style="color: black;text-align: left;">Listado de Productos</h2>
+<table class="table table-striped">
+    <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Seccion</th>
+
+    </tr>
+
+    {% for p in productos %}
+
+    
+        <tr>
+
+            {% if p.imagen %}
+            <td><img class="img-fluid" src="{{p.imagen.url}}" alt="" width="70" height="60" style="border-radius:60%"></td>
+            {% endif %}
+            </td>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.precio }}</td>
+            <td>{{ p.stock }}</td>
+            <td>{{ p.seccion }}</td>
+
+
+            <td>
+                <a href="{% url 'modificar_producto' p.id %}">Modificar</a>
+            </td>
+            <td>
+                <a href="#" onclick="confirmarEliminacion({{p.id}})">Eliminar</a>
+            </td>
+
+    
+    </tr>
+
+
+    {% endfor %}
+
+</table>
+{% endblock %}

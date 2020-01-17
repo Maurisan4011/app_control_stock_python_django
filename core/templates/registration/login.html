@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+
+<div class='row'>
+<div class='col-sm-12 col-sm-offset-3'>
+<h2 class='text-align-center'><strong>Iniciar Sesión</strong></h2>
+<form method="post" action=".">
+  {% csrf_token %} 
+  {{ form|crispy }}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input class="btn btn-success" type="submit" value="Entrar">
+            <input class="btn btn-info" type="reset" value="Borrar">
+            
+        </form>
+        <br>
+        Si todavia no tenes cuenta <a style="color:rgb(14, 26, 39)" href="{% url 'registro_usuario'%}">Registrate aca.</a> <br>
+        Entrar con facebook <a style="color:rgb(14, 26, 39)" href="{% url 'social:begin' 'facebook' %}">Login</a>
+        <br>
+{% endblock %}

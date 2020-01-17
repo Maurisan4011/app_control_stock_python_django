@@ -1,0 +1,36 @@
+1- Instalar paquete social para django
+pip install social-auth-app-django
+
+
+2.-Agregar las siguientes lineas en archivo settings.py
+ 
+a- en instalen apps agregar el siguiente modulo 
+'social_django',
+	
+Además agregar las siguientes lineas
+	
+SOCIAL_AUTH_FACEBOOK_KEY = 'key'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'secret'
+
+
+b- En middleware agregar 'social_django.middleware.SocialAuthExceptionMiddleware',
+
+c- en contextprocessors agregar estas dos lineas al final de arreglo:
+'social_django.context_processors.backends',
+'social_django.context_processors.login_redirect',
+
+d- Al final del documento settings.py agregar las siguientes lineas:
+	
+AUTHENTICATION_BACKENDS = (
+'social_core.backends.facebook.FacebookOAuth2',
+'django.contrib.auth.backends.ModelBackend',
+)
+
+3.Agregar la siguiente linea en las urls del modulo core
+
+path('oauth/', include('social_django.urls', namespace='social'))
+
+4.Agregar la siguiente linea en el archivo login.html
+
+<a href="{% url 'social:begin' 'facebook' %}">Login con facebook</a>
+
