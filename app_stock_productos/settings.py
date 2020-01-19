@@ -25,7 +25,7 @@ SECRET_KEY = 'n@)0=e(fagqjj4gtv^b%qud^hz5z_9)*pdv56+qk)#u^jam0zg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['maudev.pythonanywhere.com','localhost']
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'registration',
     'social_django',
-    
+
 ]
 
 MIDDLEWARE = [

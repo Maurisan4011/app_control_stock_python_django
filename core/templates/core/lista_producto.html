@@ -10,7 +10,7 @@
 {% endblock %}
 
 <h2 style="color: black;text-align: left;">Listado de Productos</h2>
-<table class="table table-striped">
+<table class="table table-striped" data-toggle="collapse">
     <tr>
         <th>Imagen</th>
         <th>Nombre</th>
@@ -22,7 +22,7 @@
 
     {% for p in productos %}
 
-    
+
         <tr>
 
             {% if p.imagen %}
@@ -42,7 +42,7 @@
                 <a href="#" onclick="confirmarEliminacion({{p.id}})">Eliminar</a>
             </td>
 
-    
+
     </tr>
 
 
