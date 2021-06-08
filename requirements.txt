@@ -6,7 +6,7 @@ django-crispy-forms==1.8.1
 django-registration-redux==2.6
 idna==2.8
 oauthlib==3.1.0
-Pillow==6.2.1
+Pillow==8.2.0
 PyJWT==1.7.1
 python3-openid==3.1.0
 pytz==2019.3
